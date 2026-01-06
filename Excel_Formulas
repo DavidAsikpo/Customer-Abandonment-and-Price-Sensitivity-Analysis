@@ -1,0 +1,60 @@
+Customer Abandonment & Price Sensitivity Dashboard Formulas
+1. Total Customer Count Formula
+=COUNTA(Data!A2:A1000)
+Purpose: Counts total customer records in dataset. Counts non-empty cells in column A rows 2-1000.
+
+2. Price Sensitivity Percentage Formula
+=TEXT(Analysis!$C$11/Analysis!$F$11, "0%") & " of total abandonments"
+Purpose: Calculates percentage of price-related abandonments. Divides price abandonments by total abandonments.
+
+3. Most Affected Category Formula
+=INDEX(Analysis!$A$5:$A$9, MATCH(MAX(Analysis!$F$5:$F$9), Analysis!$F$5:$F$9, 0))
+Purpose: Finds category with highest abandonment count using INDEX-MATCH.
+
+4. Category Impact Percentage Formula
+=IFERROR(TEXT(MAX(Analysis!$F$5:$F$9)/Analysis!$F$11, "0%") & " from this category", "0% from this category")
+Purpose: Shows percentage of total abandonments from top category.
+
+5. Emoji KPI Display Formula
+=IF(Analysis!$F$11 > 0, "🚨 " & TEXT(Analysis!$C$11/Analysis!$F$11, "0%") & " price-related", "🚨 No data")
+Purpose: Creates visual KPIs with emojis and error handling.
+
+6. Context Label Formula
+="(" & Analysis!$C$11 & " of " & Analysis!$F$11 & " abandonments caused by price)"
+Purpose: Shows raw numbers in parentheses for context.
+
+7. Age Group Counter Formula
+=SUMIFS(Data!$F$2:$F$1000, Data!$C$2:$C$1000, "Gen Z", Data!$G$2:$G$1000, "Yes")
+Purpose: Counts price-sensitive Gen Z customers using SUMIFS.
+
+8. Abandonment Rate Formula
+=IFERROR(COUNTIFS(Data!$C$2:$C$1000, "Gen Z", Data!$H$2:$H$1000, "Abandoned") / COUNTIF(Data!$C$2:$C$1000, "Gen Z"), 0)
+Purpose: Calculates abandonment rate for specific segments.
+
+9. Dynamic Filter Sum Formula
+=SUM(FILTER(Data!$F$2:$F$1000, (Data!$C$2:$C$1000 = "Gen Z") * (Data!$D$2:$D$1000 = "Clothing")))
+Purpose: Sums values based on multiple criteria using FILTER.
+
+10. SUMPRODUCT Alternative Formula
+=SUMPRODUCT((Data!$C$2:$C$1000 = "Gen Z") * (Data!$D$2:$D$1000 = "Clothing") * Data!$F$2:$F$1000)
+Purpose: Multi-criteria sum for older Excel versions.
+
+11. Safe Division Formula
+=IF($F$11 <> 0, $C$11 / $F$11, 0)
+Purpose: Prevents #DIV/0! errors in calculations.
+
+12. Data Validation Formula
+=IF(ISBLANK($C$11), "⚠️ Data missing", TEXT($C$11, "0"))
+Purpose: Shows warning when data is missing.
+
+13. Text Bar Chart Formula
+=REPT("█", ROUND($C$11/MAX($C$11:$C$15)*10, 0)) & REPT("░", 10-ROUND($C$11/MAX($C$11:$C$15)*10, 0))
+Purpose: Creates visual proportion indicators using text.
+
+14. Trend Indicator Formula
+=IF($C$11 > $B$11, "↑", IF($C$11 < $B$11, "↓", "→")) & " " & TEXT(ABS($C$11-$B$11)/$B$11, "0%")
+Purpose: Shows change from previous period with arrows.
+
+Dashboard: Customer Abandonment Analysis
+File: Dashboard_Formulas_ReadMe.txt
+Date: March 2024
