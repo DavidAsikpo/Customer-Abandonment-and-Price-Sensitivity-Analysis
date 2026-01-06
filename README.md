@@ -54,7 +54,7 @@ The final interactive dashboard will:
 
 ### Excel Dashboard Overview
 Interactive Excel dashboard file: 
-![Dashboard Preview](./Doc/screenshot.png)
+![Dashboard Preview](./Docs/screenshot.png)
 
 ### Analytical Report
 Comprehensive report detailing methodology, findings, and recommendations: `report/Customer_Abandonment_Analysis_Report.pdf`
@@ -116,17 +116,9 @@ Transformations applied:
 2. Value-Focused Messaging emphasizing bundles and savings
 3. Dashboard-Driven Performance Tracking for continuous optimization
 
-## Repository Structure
-Customer-Abandonment-Analysis/
-├── README.md
-├── dashboard-screenshot.png
-├── report/
-│ └── Customer_Abandonment_Analysis_Report.pdf
-├── data/
-│ └── E_commerce_dataset.csv
 
 ## How to Use
-1. Go to Google Drive link `Customer_Abandonment_Dashboard.xlsx`
+1. Go to Google Drive link : https://drive.google.com/drive/folders/12n8cyBPtJJJqi6b88VlrpYMdQbs2Gb8O?usp=drive_link
 2. Open in Microsoft Excel (ensure macros are enabled if applicable)
 3. Use slicers to filter by various dimensions
 4. Explore real-time insights through interactive charts
