@@ -53,7 +53,8 @@ The final interactive dashboard will:
 - Strategic recommendations summary
 
 ### Excel Dashboard Overview
-Interactive Excel dashboard file: `Customer_Abandonment_Dashboard.xlsx`
+Interactive Excel dashboard file: 
+![Dashboard Preview](./Doc/screenshot.png)
 
 ### Analytical Report
 Comprehensive report detailing methodology, findings, and recommendations: `report/Customer_Abandonment_Analysis_Report.pdf`
